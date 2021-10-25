@@ -4,10 +4,12 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./					
 
-RUN npm install						
+RUN npm ci					
 
 COPY . .						
 
+RUN npm run build
+
 EXPOSE 5000						
 
-CMD [ "node","run start" ]
+CMD [ "node","dist/main.js" ]
