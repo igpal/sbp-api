@@ -11,7 +11,7 @@ services:
         parallelism: 1
         delay: 10s
       restart_policy:
-        condition: always
+        condition: on-failure
     logging:
       driver: json-file
       options:
